@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    background-color: #F3F5F7;
+    font-family: Mulish;
+    overflow-x: hidden;
+  }
+  
+  .container{
+    width: 95%;
+    margin: 0 auto 0;
+    max-width: 1420px;
+  }

@@ -1,0 +1,14 @@
+.marketsFolder{
+  @include flex();
+  flex-wrap: wrap;
+  padding:20px;
+  padding-bottom: 0;
+  background: $black;
+  border-radius: 0 0 15px 15px;
+  @include tablet{
+    padding: 15px;
+  }
+  @include mobile{
+    padding: 10px;
+  }
+}

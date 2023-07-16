@@ -1,0 +1,59 @@
+.login2 {
+    width: 100%;
+    height: 100vh;
+    @include flex(center, center, column);
+
+    .container {
+        .login {
+            width: 25%;
+            margin: 0 auto;
+            @include flex(flex-start, stretch, column);
+            background: #E9E9E9;
+            box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+            padding: 30px 20px;
+
+            @include tablet {
+                width: 45%;
+                margin: 0 auto 30px;
+            }
+
+            @include mobile {
+                width: 80%;
+                margin: 0 auto 30px;
+            }
+
+            .login_text {
+                width: 80%;
+                margin: 0 auto;
+                color: #101820;
+                font-weight: 500;
+                line-height: 20px;
+                text-align: center;
+            }
+
+            .input {
+                margin: 20px 0;
+                border: 1px solid #101820;
+                border-radius: 5px;
+                padding: 5px 10px;
+                outline: none;
+                background: transparent;
+            }
+
+            button {
+                cursor: pointer;
+                background: #101820;
+                box-shadow: 0px 4px 4px rgba(114, 114, 114, 0.25);
+                border-radius: 8px;
+                color: #FEE715;
+                ;
+                font-weight: 600;
+                font-size: 14px;
+                padding: 8px 0;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}

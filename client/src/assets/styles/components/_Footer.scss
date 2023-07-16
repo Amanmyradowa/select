@@ -1,0 +1,137 @@
+.footer{
+  width: 100%;
+  padding: 20px 0px;
+  background: $black;
+  border-radius: 20px 20px 0px 0px;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 50px;
+  @include tablet{
+    margin-top: 30px;
+  }
+  @include mobile{
+    margin-top: 20px;
+  }
+
+  .container{
+      .logo{
+          position: absolute;
+          top: 40%;
+          transform: translateY(-50%);
+
+          @include tablet{
+              display: none !important;
+          }
+      }
+      .footer_btns{
+          width: 100%;
+          @include flex(center, center, column);
+
+          @include tablet{
+              display: none !important;
+          }
+
+          a{
+              text-decoration: none;
+              background: $yellow;
+              color: $black;
+              border-radius: 10px;
+              border: none;
+              outline: none;
+              font-weight: 700;
+              font-size: 16px;
+              cursor: pointer;
+
+              @include mobile{
+                  margin-top: 25px;
+              }
+          }
+          .btn1{
+              padding: 7px 27px;
+              margin-bottom: 10px;
+          }
+          .footer_btns_middle{
+              width: 55%;
+              @include flex();
+
+              .btn2{
+                  padding: 7px 30px;
+              }
+              .btn3{
+                  padding: 7px 50px;
+              }
+          }
+          .btn4{
+              padding: 7px 60px;
+              margin-top: 10px;
+          }
+          .footer_txt{
+              margin-top: 10px;
+              font-weight: 600;
+              color: $yellow;
+
+              @include mobile{
+                  margin-top: 20px;
+              }
+          }
+      }
+
+      .footer_tablet{
+          width: 100%;
+          @include flex(center, center, column);
+          display: none;
+
+          @include tablet{
+              display: flex;
+          }
+
+          .footer_btns_tablet{
+              width: 100%;
+
+              a{
+                  width: 35%;
+                  text-decoration: none;
+                  color: $black;
+                  padding: 7px 27px;
+                  background: $yellow;
+                  border: none;
+                  outline: none;
+                  font-weight: 700;
+                  font-size: 16px;
+                  margin-top: 10px;
+                  border-radius: 10px;
+                  text-align: center;
+                  
+                  @include mobile{
+                      width: 47%;
+                  }
+              }
+
+              .footer_btns_left{
+                  width: 80%;
+                  @include flex();
+                  margin: 0 auto;
+
+                  @include mobile{
+                      width: 100%;
+                  }
+              }
+              .footer_btns_right{
+                  width: 80%;
+                  @include flex();
+                  margin: 0 auto;
+
+                  @include mobile{
+                      width: 100%;
+                  }
+              }
+          }
+          .footer_txt{
+              color: $yellow;
+              font-weight: 600;
+              font-size: 14px;
+              margin-top: 20px;
+          }
+      }
+  }
+}

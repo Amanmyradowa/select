@@ -1,0 +1,21 @@
+//configs
+@import './config/variables';
+@import './config/mixins';
+@import './config/fonts';
+
+// components
+@import './components/layout';
+@import './components/Header';
+@import './components/Footer';
+@import './components/Product';
+@import './components/MarketsFolder';
+@import './components/Market';
+@import './components/breadcrumb';
+
+//pages
+@import './pages/index';
+@import './pages/bildirishGosh';
+@import './pages/login';
+@import './pages/login2';
+@import './pages/profile';
+@import './pages/category';

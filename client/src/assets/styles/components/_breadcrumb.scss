@@ -1,0 +1,64 @@
+.breadcrumb_category{
+  .breadcrumb_top{
+    width: 100%;
+    @include flex();
+    background: $black;
+    padding: 15px 0 30px;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    .breadcrumb_category_left{
+      width: 25%;
+      background: $yellow;
+      padding: 12px 20px;
+      border-radius: 0px 5px 5px 0px;
+      @include flex();
+      .left{
+        p{
+          color: #000;
+          font-size: 20px;
+          font-weight: 700;
+        }
+        &.active{
+          span{
+            display: block;
+            width: 110%;
+            height: 1px;
+            margin-left: -5%;
+            background-color: $black;
+          }
+        }
+      }
+    }
+    .breadcrumb_category_right{
+      background: $yellow;
+      padding: 10px 15px 10px 20px;
+      border-radius: 5px 0px 0px 5px;
+      @include flex();
+      .search_category{
+        @include flex();
+        input{
+          width: 0;
+          border: none;
+          outline: none;
+          background: none;
+        }
+        label{
+          display: flex;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .breadcrumg_bottom{
+    width: 25%;
+    background: $black;
+    margin: 0 auto 20px;
+    color: $yellow;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
