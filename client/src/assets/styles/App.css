@@ -469,7 +469,7 @@ body {
   -webkit-box-orient: vertical;
 }
 
-.product_basket {
+.buttons .buttons_button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -477,17 +477,21 @@ body {
   position: absolute;
   bottom: 115px;
   right: 6px;
-  background: yellow;
+  background: #FEE715;
   border-radius: 5px 0 0 5px;
   border: 1px solid black;
   border-right: none;
   padding: 4px 10px;
   cursor: pointer;
 }
-.product_basket span {
+.buttons .buttons_button button {
   display: flex;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
 }
-.product_basket span:nth-child(2) {
+.buttons .buttons_button span {
   font-size: 26px;
   font-weight: 700;
   margin: 0 15px;
@@ -585,16 +589,39 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 1200px) {
+  .breadcrumb_category .breadcrumb_top .breadcrumb_category_left {
+    width: 30%;
+  }
+}
+@media (max-width: 1000px) {
+  .breadcrumb_category .breadcrumb_top .breadcrumb_category_left {
+    width: 40%;
+  }
+}
+@media (max-width: 800px) {
+  .breadcrumb_category .breadcrumb_top .breadcrumb_category_left {
+    width: 55%;
+  }
+}
 .breadcrumb_category .breadcrumb_top .breadcrumb_category_left .left p {
   color: #000;
   font-size: 20px;
   font-weight: 700;
 }
-.breadcrumb_category .breadcrumb_top .breadcrumb_category_left .left.active span {
+@media (max-width: 640px) {
+  .breadcrumb_category .breadcrumb_top .breadcrumb_category_left .left p {
+    font-size: 16px;
+  }
+}
+.breadcrumb_category .breadcrumb_top .breadcrumb_category_left .left span {
   display: block;
   width: 110%;
   height: 1px;
   margin-left: -5%;
+  background-color: #FEE715;
+}
+.breadcrumb_category .breadcrumb_top .breadcrumb_category_left .left.active span {
   background-color: #101820;
 }
 .breadcrumb_category .breadcrumb_top .breadcrumb_category_right {
@@ -607,13 +634,16 @@ body {
   align-items: center;
 }
 .breadcrumb_category .breadcrumb_top .breadcrumb_category_right .search_category {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 .breadcrumb_category .breadcrumb_top .breadcrumb_category_right .search_category input {
-  width: 0;
   border: none;
   outline: none;
   background: none;
@@ -633,6 +663,17 @@ body {
   box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.25);
   font-size: 20px;
   font-weight: 700;
+}
+@media (max-width: 1000px) {
+  .breadcrumb_category .breadcrumg_bottom {
+    width: 50%;
+  }
+}
+@media (max-width: 800px) {
+  .breadcrumb_category .breadcrumg_bottom {
+    width: 60%;
+    font-size: 18px;
+  }
 }
 
 .main .main_categories {
@@ -1123,12 +1164,17 @@ body {
 }
 .login_page .container .login #input {
   padding: 5px 10px;
-  color: #9B9B9B;
   font-weight: 600;
   background: transparent;
   border: 1px solid #101820;
   border-radius: 5px;
   outline: none;
+}
+.login_page .container .login #input::-moz-placeholder {
+  color: #9B9B9B;
+}
+.login_page .container .login #input::placeholder {
+  color: #9B9B9B;
 }
 .login_page .container .login .checkbox {
   display: flex;
@@ -1140,7 +1186,6 @@ body {
 .login_page .container .login .checkbox input {
   width: 25px;
   height: 25px;
-  cursor: pointer;
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
@@ -1148,6 +1193,7 @@ body {
   background-color: transparent;
   border: 1px solid #A9A9A9;
   border-radius: 2px;
+  cursor: pointer;
 }
 @media (max-width: 1000px) {
   .login_page .container .login .checkbox input {
@@ -1174,7 +1220,6 @@ body {
   cursor: pointer;
 }
 .login_page .container .login button {
-  cursor: pointer;
   background: #101820;
   box-shadow: 0px 4px 4px rgba(114, 114, 114, 0.25);
   border-radius: 8px;
@@ -1182,8 +1227,6 @@ body {
   font-weight: 600;
   font-size: 14px;
   padding: 8px 0;
-  border: none;
-  outline: none;
 }
 .login_page .container .description {
   width: 33%;
@@ -1414,5 +1457,5 @@ body {
   background: #101820;
   padding: 20px;
   padding-bottom: 0;
-  border-radius: 0 0 15px 15px;
+  border-radius: 20px;
 }/*# sourceMappingURL=App.css.map */

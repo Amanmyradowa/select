@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Market() {
   return (
-    <Link to={'/'} className='market'>
+    <Link to={'/MarketPage'} className='market'>
       <img src={require('../assets/images/delete/market.png')} alt="" />
       <div className="market_info">
         <div className="market_info_name">Doner house Somso house</div>

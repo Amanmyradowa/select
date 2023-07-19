@@ -10,6 +10,7 @@ import BildirishGosh from '../pages/BildirishGosh';
 import Login from '../pages/Login';
 import Login2 from '../pages/Login2';
 import Category from '../pages/Category';
+import MarketPage from '../pages/MarketPage';
 
 function AnimatedRoutes() {
   return (
@@ -19,7 +20,8 @@ function AnimatedRoutes() {
         <Route path='/BildirishGosh' element={<BildirishGosh />}/>
         <Route path='/Login' element={<Login />}/>
         <Route path='/Login2' element={<Login2 />}/>
-        <Route path='/Category' element={<Category />}/>
+        <Route path='/Category/:id' element={<Category />}/>
+        <Route path='/MarketPage' element={<MarketPage />}/>
       </Route>
     </Routes>
   );

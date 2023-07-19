@@ -1,12 +1,14 @@
 import React from 'react'
 import Market from '../components/Market'
-import Breadcrumb from '../components/Breadcrumb'
+import CategoryBreadcrumb from '../components/CategoryBreadcrumb'
+import { useParams } from 'react-router-dom'
 
 const Category = () => {
+  const {id} = useParams();
   return (
     <div className='container'>
       <div className="category_page">
-        <Breadcrumb />
+        <CategoryBreadcrumb />
         <div className="markets">
           <Market />
           <Market />
