@@ -14,6 +14,13 @@ const customSelect = new CustomSelect(".custom-select", {
 
 customSelect.initialization();
 
+
+
+
+
+
+
+
 let btn = document.querySelector(".selector__btn");
 let table = document.querySelector(".selector__table");
 let selector_table = document.querySelector(".selector__table__tr");
