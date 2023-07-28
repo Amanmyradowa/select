@@ -1,6 +1,7 @@
 :root {
   --background: rgba(16, 206, 223, 0.3);
   --white: #ffffff;
+  --blue: rgba(16, 206, 223);
 }
 
 * {
@@ -18,16 +19,32 @@
   flex-direction: column;
 }
 
-.custom-select__result {
+.custom-select__header{
   background-color: var(--background);
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-select__result {
+  background-color: transparent;
   outline: none;
   cursor: pointer;
-  padding: 10px 15px;
   border: none;
-  border-radius: 8px;
   font-weight: 600;
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+span{
+  transition: .3s;
+}
+
+span.active{
+  transform: rotate(-180deg);
 }
 
 .custom-select__content {
@@ -37,7 +54,7 @@
   transition: all 0.5s;
   overflow: hidden;
   position: absolute;
-  top: 400px; /* Shu yerde yalnyshlyk bar bashka komplarda buttonun ustune minyar 300px sazlamaly men ozum 400 edyan sen dogrusyny goyay*/
+  top: 450px;
 }
 
 .custom-select__content.active{
@@ -59,7 +76,7 @@
 }
 
 .custom-select__list{
-  height: 100px;
+  height: 110px;
 	overflow: auto;
 }
 
@@ -81,7 +98,6 @@
   color: #000;
 }
 
-
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -92,15 +108,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(16, 206, 223, 0.3);
+  background: var(--background);
 	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(16, 206, 223);
+  background: var(--blue);
 }
 
-/* Barsini ozun owadanlay */
 .selected{
-  background: rgba(16, 206, 223);
+  background: var(--blue);
 }

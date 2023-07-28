@@ -73,7 +73,6 @@ class CustomSelect {
    * */
   _items = [];
 
-
   _defaultUlItems;
 
   /**
@@ -151,9 +150,10 @@ class CustomSelect {
 
     const value = event.target.value.toUpperCase();
 
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].title.toUpperCase().includes(value)) {
-        this.pushData(newData, i)
+    for (let i = 0; i < data.length; i++)
+    {
+      if (data[i].title.toUpperCase().includes(value)){
+        this.pushData(newData, i);
       }
     }
     this.createItems(newData);
@@ -184,12 +184,12 @@ class CustomSelect {
   clickHandler() {
     // Handler for header node click
     this._inner.classList.toggle("active");
-
+    
     // release input after closing
     this._input.value = "";
-
+    
     this._span.classList.toggle("active")
-
+    
     if(!this._defaultUlItems.querySelectorAll('li').length){
       this.setDefaultItems();
     }
@@ -220,7 +220,7 @@ class CustomSelect {
     this.setFindedElements(elements);
   }
 
-  createLiItem(index) {
+  createLiItem() {
     const li = document.createElement("li");
 
     li.className = "custom-select__list-item";
@@ -270,6 +270,7 @@ class CustomSelect {
 
   setDefaultItems() {
     this.createItems(this._options.data);
+    console.log(this.createItems(this._options.data));
 
     this.setOnClickFunkForLi(document.querySelectorAll('.custom-select__list-item'));
   }
@@ -283,6 +284,7 @@ class CustomSelect {
   select(li,lis) {
     for(let i = 0; i<lis.length; i++){
       lis[i].classList.remove('selected');
+      this._inner.classList.remove("active");
     }
     li.classList.add('selected');
     this.setLiTextToHeader(li.textContent);
@@ -291,4 +293,4 @@ class CustomSelect {
   setLiTextToHeader(text){
     this._selectResult.textContent = text; 
   }
-} 
+}
