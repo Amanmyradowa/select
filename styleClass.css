@@ -18,33 +18,16 @@
   flex-direction: column;
 }
 
-.custom-select__header{
-  background-color: var(--background);
-  padding: 10px 15px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-
-}
-
-span{
-  display: flex;
-  margin-left: 10px;
-  transition: .3s;
-}
-span.active{
-  transform: rotate(180deg);
-}
-
 .custom-select__result {
-  background: none;
+  background-color: var(--background);
   outline: none;
   cursor: pointer;
+  padding: 10px 15px;
   border: none;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .custom-select__content {
@@ -54,7 +37,7 @@ span.active{
   transition: all 0.5s;
   overflow: hidden;
   position: absolute;
-  top: 300px;
+  top: 400px; /* Shu yerde yalnyshlyk bar bashka komplarda buttonun ustune minyar 300px sazlamaly men ozum 400 edyan sen dogrusyny goyay*/
 }
 
 .custom-select__content.active{
@@ -114,5 +97,10 @@ span.active{
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 206, 223);
+}
+
+/* Barsini ozun owadanlay */
+.selected{
   background: rgba(16, 206, 223);
 }

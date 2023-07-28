@@ -64,13 +64,6 @@ class CustomSelect {
    *
    * @type { HTMLElement }
    * */
-  _defaultUlItems;
-
-  /**
-   * @private
-   *
-   * @type { HTMLElement }
-   * */
   _link;
 
   /**
@@ -79,6 +72,9 @@ class CustomSelect {
    * @type { array }
    * */
   _items = [];
+
+
+  _defaultUlItems;
 
   /**
    * @private
@@ -127,6 +123,8 @@ class CustomSelect {
     this._input.addEventListener("input", this.inputHandler.bind(this));
 
     this._header.addEventListener("click", this.clickHandler.bind(this));
+
+    console.log(document.querySelectorAll('ul'))
   }
 
   /**
@@ -143,13 +141,11 @@ class CustomSelect {
     const newData = [];
 
     const data = this._options.data;
-    
+
     const value = event.target.value.toUpperCase();
 
-    for (let i = 0; i < data.length; i++)
-    {
-      if (data[i].title.toUpperCase().includes(value))
-      {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].title.toUpperCase().includes(value)) {
         this.pushData(newData, i)
       }
     }
@@ -166,8 +162,7 @@ class CustomSelect {
    * 
    * @description newData pushing
    * */
-  pushData(newData, i)
-  {
+  pushData(newData, i) {
     newData.push(this._options.data[i]);
   }
 
@@ -203,31 +198,20 @@ class CustomSelect {
    * */
   createItems(arr) {
     const elements = document.createDocumentFragment();
-    
-    for (let i = 0; i < arr.length; i++)
-    {
+
+    for (let i = 0; i < arr.length; i++) {
       const li = this.createLiItem(i);
 
       const a = this.createAItem(arr[i].title);
 
-      const mergedLi = this.mergeItems(li,a);
-      
+      const mergedLi = this.mergeItems(li, a);
+
       elements.appendChild(mergedLi);
     }
     this.setFindedElements(elements);
   }
 
-  /**
-   *
-   * @public
-   *
-   * @method
-   *
-   * @description creates li items;
-   *
-   * @param { index }
-   * */
-  createLiItem(index){
+  createLiItem(index) {
     const li = document.createElement("li");
 
     li.className = "custom-select__list-item";
@@ -237,44 +221,20 @@ class CustomSelect {
     return li;
   }
 
-  /**
-   *
-   * @public
-   *
-   * @method
-   *
-   * @description creates new items based on a list of data.
-   *
-   * @param { Element }
-   * */
-  createAItem(title){
+  createAItem(title) {
     const a = document.createElement("a");
 
     a.href = "#";
-    
+
     a.className = "custom-select__list-link";
-    
+
     a.textContent = title;
-    
+
     return a;
   }
-  
-  /**
-   *
-   * @public
-   *
-   * @method
-   *
-   * @description creates li a items
-   *
-   * @param { HTMLElement }
-   * 
-   * @param { HTMLElement }
-   * */
-  mergeItems(li,a){
 
+  mergeItems(li, a) {
     li.appendChild(a);
-
     return li;
   }
 
@@ -284,33 +244,34 @@ class CustomSelect {
    *
    * @method
    *
-   * @description This function sets the founded elements.
+   * @description This function sets the found elements.
    *
    * @param { Element }
    * */
   setFindedElements(findedElem) {
     const ulLists = document.querySelectorAll(".custom-select__list li");
-    
+
     const ul = document.querySelector(".custom-select__list");
 
     ulLists.forEach((li) => {
-
       ul.removeChild(li);
-
     });
-
     ul.appendChild(findedElem);
   }
 
-  /**
-   *
-   * @public
-   *
-   * @method
-   *
-   * @description Set default elements.
-   * */
-  setDefaultItems(){
+  setDefaultItems() {
     this.createItems(this._options.data);
+
+    this.setOnClickFunkForLi(document.querySelectorAll('.custom-select__list-item'));
   }
-}
+
+  setOnClickFunkForLi(lis) {
+    for (let i = 0; i < lis.length; i++) {
+      lis[i].addEventListener('click',()=>this.select(lis[i]));
+    }
+  }
+
+  select(li) {
+    li.classList.toggle('selected')
+  }
+} 
