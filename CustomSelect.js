@@ -95,9 +95,9 @@ class CustomSelect {
   /**
    * @private
    * 
-   * @type {array}
+   * @type { String }
    * */
-  _selectedElements = [];
+  _selectedElementText;
 
   constructor(selectors = "", options = {}) {
     this._options = Object.assign(this._options, options);
@@ -132,8 +132,6 @@ class CustomSelect {
     this._input.addEventListener("input", this.inputHandler.bind(this));
 
     this._header.addEventListener("click", this.clickHandler.bind(this));
-
-    console.log(document.querySelectorAll('ul'))
   }
 
   /**
@@ -192,7 +190,9 @@ class CustomSelect {
 
     this._span.classList.toggle("active")
 
-    this.setDefaultItems();
+    if(!this._defaultUlItems.querySelectorAll('li').length){
+      this.setDefaultItems();
+    }
   }
 
   /**
@@ -276,31 +276,19 @@ class CustomSelect {
 
   setOnClickFunkForLi(lis) {
     for (let i = 0; i < lis.length; i++) {
-      lis[i].addEventListener('click',()=>this.select(lis[i]));
+      lis[i].addEventListener('click',()=>this.select(lis[i],lis));
     }
   }
 
-  select(li) {
-    if(li.classList.contains('selected')){
-      li.classList.remove('selected')
-      this._selectedElements =  this._selectedElements.filter((e)=> e !== li.textContent);
-    }else{
-      li.classList.add('selected')
-      this._selectedElements.push(li.textContent);
+  select(li,lis) {
+    for(let i = 0; i<lis.length; i++){
+      lis[i].classList.remove('selected');
     }
-    
-    this.setLiTextToHeader();
+    li.classList.add('selected');
+    this.setLiTextToHeader(li.textContent);
   }
 
-  setLiTextToHeader(){
-    this._selectResult.textContent = this.joinStrings()
+  setLiTextToHeader(text){
+    this._selectResult.textContent = text; 
   }
-
-  joinStrings(){
-    let joinedString = "";
-    for (const string of this._selectedElements) {
-      joinedString += string + " / ";
-    }
-    return joinedString.slice(0, -3);
-  };
 } 
