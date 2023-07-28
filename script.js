@@ -14,18 +14,9 @@ const customSelect = new CustomSelect(".custom-select", {
 
 customSelect.initialization();
 
-
-
-
-
-
-
-
 let btn = document.querySelector(".selector__btn");
 let table = document.querySelector(".selector__table");
 let selector_table = document.querySelector(".selector__table__tr");
-
-// document.createDocumentFragment()
 
 function searching(event) {
   console.log("Hi");
@@ -40,11 +31,6 @@ function searching(event) {
     }
   }
 }
-
-// btn.addEventListener('mousedown', () => {
-//   let search = document.querySelector(".selector__table__search");
-//   search.value = ''
-// });
 
 function activeTable() {
   let search = document.querySelector(".selector__table__search");

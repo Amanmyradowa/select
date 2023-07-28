@@ -92,6 +92,13 @@ class CustomSelect {
    * @param { Object } options
    * */
 
+  /**
+   * @private
+   * 
+   * @type {array}
+   * */
+  _selectedElements = [];
+
   constructor(selectors = "", options = {}) {
     this._options = Object.assign(this._options, options);
 
@@ -110,6 +117,8 @@ class CustomSelect {
     this._span = this._element.querySelector("span");
 
     this._defaultUlItems = this._element.querySelector(".custom-select__list");
+
+    this._selectResult = this._element.querySelector('.custom-select__result')
   }
 
   /**
@@ -272,6 +281,26 @@ class CustomSelect {
   }
 
   select(li) {
-    li.classList.toggle('selected')
+    if(li.classList.contains('selected')){
+      li.classList.remove('selected')
+      this._selectedElements =  this._selectedElements.filter((e)=> e !== li.textContent);
+    }else{
+      li.classList.add('selected')
+      this._selectedElements.push(li.textContent);
+    }
+    
+    this.setLiTextToHeader();
   }
+
+  setLiTextToHeader(){
+    this._selectResult.textContent = this.joinStrings()
+  }
+
+  joinStrings(){
+    let joinedString = "";
+    for (const string of this._selectedElements) {
+      joinedString += string + " / ";
+    }
+    return joinedString.slice(0, -3);
+  };
 } 
